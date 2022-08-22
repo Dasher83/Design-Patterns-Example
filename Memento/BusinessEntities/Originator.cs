@@ -50,7 +50,7 @@ namespace Memento.BusinessEntities
                 throw new InvalidOperationException($"Unknown memento class {memento}");
             }
 
-            _state = memento.State;
+            _state = ((ConcreteMemento)memento).State;
             ColorConsole.WriteLine($"Originator: My state has changed to: {_state}", _color);
         }
     }
